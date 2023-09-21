@@ -1,0 +1,29 @@
+<div class="main-container">
+<div class="form-container">
+    <div class="row">
+      <h1>Deposit Amount</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+          <div class="form-group">
+            <label for="amount"></label>
+            <input
+              type="text"
+              name="amount"
+              formControlName="amount"
+              class="form-control"
+              placeholder="Enter Amount to Deposit"
+              required
+            />
+            <button class="form-control btn" type="submit">Deposit</button>
+            <p *ngIf="errMessage" class="err">Enter amount more than 100</p>
+            <p *ngIf="sucessMessage" class="sucess">
+              {{ amount }} has been deposited
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 

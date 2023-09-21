@@ -1,0 +1,23 @@
+<div class="navbar2">
+    <ul class="ul">
+      <li class="h3">Lords Bank</li>
+      <li routerLink="/user/dashboard" routerLinkActive="active">DashBoard</li>
+      <li routerLink="/user/usersavings" routerLinkActive="active">Savings</li>
+      <li routerLink="/user/creditcards" routerLinkActive="active">Credit Cards</li>
+    </ul>
+  
+    <div class="name">
+      
+      <span>{{ user.firstName }}</span>
+      <div class="dropdown">
+        <button>👻</button>
+        <div class="content">
+          <ul class="nameul">
+            <li routerLink="/user/profile">Profile</li>
+            <li routerLink="/" (click)="logout()">Log out</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,246 @@
+<app-header></app-header>
+<div class="forms">
+  <div class="container">
+    <div class="form-container">
+      <div class="row">
+        <h1>Register Account</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <div class="groups">
+              <!-- USER FIRST NAME FIELD  -->
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  formControlName="firstname"
+                  class="form-control"
+                  required
+                />
+                <!-- ERRORS DIV  -->
+                <div
+                  *ngIf="firstname?.['touched'] && firstname?.['invalid']"
+                  class="alert"
+                >
+                  <p
+                    *ngIf="firstname?.['touched'] && firstname?.hasError('pattern') ; else freq"
+                  >
+                    Invalid first name
+                  </p>
+
+                  <ng-template #freq>
+                    <p>First name is required</p>
+                  </ng-template>
+                </div>
+              </div>
+              <!-- USER LAST NAME FIELD  -->
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  formControlName="lastname"
+                  class="form-control"
+                  required
+                />
+                <!-- ERRORS DIV  -->
+                <div
+                  *ngIf="lastname?.['touched'] && lastname?.['invalid']"
+                  class="alert alert-danger"
+                >
+                  <p
+                    *ngIf="lastname?.['touched'] && lastname?.hasError('pattern') ; else freq"
+                  >
+                    Invalid lastname
+                  </p>
+
+                  <ng-template #freq>
+                    <p>lastname is required</p>
+                  </ng-template>
+                </div>
+              </div>
+              <!-- USERS USER NAME FIELD  -->
+              <div class="form-group">
+                <label for="username">User Name</label>
+                <input
+                  type="text"
+                  name="username"
+                  formControlName="username"
+                  class="form-control"
+                  required
+                />
+                <!-- ERRORS DIV  -->
+                <div
+                  *ngIf="username?.['touched'] && username?.['invalid']"
+                  class="alert alert-danger"
+                >
+                  <p
+                    *ngIf="username?.['touched'] && username?.hasError('pattern') ; else freq"
+                  >
+                    Invalid username
+                  </p>
+
+                  <ng-template #freq>
+                    <p>username is required</p>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <div class="groups">
+              <!-- USER EMAIL FIELD  -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  formControlName="email"
+                  class="form-control"
+                  required
+                />
+                <!-- ERRORS DIV  -->
+                <div
+                  *ngIf="email?.['touched'] && email?.['invalid']"
+                  class="alert alert-danger"
+                >
+                  <p
+                    *ngIf="email?.['touched'] && email?.hasError('pattern') ; else freq"
+                  >
+                    Invalid email address
+                  </p>
+
+                  <ng-template #freq>
+                    <p>Email-Id is required</p>
+                  </ng-template>
+                </div>
+              </div>
+              <!-- USER PASSWORD FIELD  -->
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="text"
+                  name="password"
+                  formControlName="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <!-- USER CONFIRM-PASSWORD FIELD  -->
+              <div class="form-group">
+                <label for="repassword">Confirm Password</label>
+                <input
+                  type="text"
+                  name="repassword"
+                  formControlName="repassword"
+                  class="form-control"
+                  required
+                />
+                <div
+                  *ngIf="repassword?.['touched'] && repassword?.['invalid']"
+                  class="alert alert-danger"
+                >
+                  <p *ngIf="repassword?.['touched']  ; else freq">
+                    passwords does not match
+                  </p>
+
+                  <ng-template #freq>
+                    <p>repassword is required</p>
+                  </ng-template>
+                </div>
+              </div>
+              <!-- USER CONTACT NUMBER FIELD  -->
+              <div class="form-group">
+                <label for="contact">Phone Number</label>
+                <input
+                  type="text"
+                  name="contact"
+                  formControlName="contact"
+                  class="form-control"
+                  required
+                />
+                <!-- ERRORS DIV  -->
+                <div
+                  *ngIf="contact?.['touched'] && contact?.['invalid']"
+                  class="alert alert-danger"
+                >
+                  <p
+                    *ngIf="contact?.['touched'] && contact?.hasError('pattern') ; else freq"
+                  >
+                    Invalid contact number
+                  </p>
+
+                  <ng-template #freq>
+                    <p>contact number is required</p>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <!-- USER ADDRESS  -->
+
+            <h3>Address</h3>
+            <div formArrayName="address">
+              <div *ngFor="let addressGroup of address.controls; let i = index">
+                <div [formGroupName]="i" class="groups">
+                  <div class="form-group">
+                    <label for="street">Street</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="street"
+                      formControlName="street"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="city"
+                      formControlName="city"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="state">State</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="state"
+                      formControlName="state"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="zip">Zip</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="zip"
+                      formControlName="zip"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <a href="#" routerLink="/login">existing user Click here to login</a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+

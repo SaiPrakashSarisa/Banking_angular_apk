@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Secular+One&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.forms {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #709ebd, #2c3e50);
+  overflow: auto;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.groups {
+  min-height: 100px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-width: 1px;
+}
+.form-container {
+  background-color: white;
+  padding: 6px 20px 6px 20px;
+  border-radius: 10px;
+  box-shadow: -10px 12px 10px black;
+  opacity: 0.8;
+}
+.row {
+  margin: 10px;
+}
+
+.col {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.row h1 {
+  text-align: center;
+  color: #323232;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin: 5px;
+}
+
+label {
+  font-size: 0.6rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form-control {
+  margin: 0px 8px;
+  width: 300px;
+  height: 30px;
+  border-bottom-width: 2px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-color: black;
+  outline: none;
+  background-color: transparent;
+  display: block;
+}
+
+.alert {
+  color: red;
+  font-size: 12px;
+}
+
+.btn {
+  width: 80px;
+  height: 25px;
+  margin-top: 5px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<div class="main-container">
+<div class="form-container">
+    <div class="row">
+      <h1>Transfer Amount</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="transferForm" (ngSubmit)="transfer()">
+          <div class="form-group">
+            <label for="taccount"></label>
+            <input
+              type="text"
+              name="taccount"
+              formControlName="taccount"
+              class="form-control"
+              placeholder="Enter Account Number"
+              required
+            />
+            <label for="amount"></label>
+            <input
+              type="number"
+              name="amount"
+              formControlName="amount"
+              class="form-control"
+              placeholder="Enter Amount to transfer"
+              required
+            />
+            <button class="form-control btn" type="submit">Transfer</button>
+            <p *ngIf="errMessage" class="err">Insufficient Funds</p>
+            <p *ngIf="errAccount" class="err">Enter valid account number</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

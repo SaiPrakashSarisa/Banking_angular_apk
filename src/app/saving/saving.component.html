@@ -1,0 +1,78 @@
+<app-navigation></app-navigation>
+<div class="container">
+  <div class="balance-transactions">
+    <div class="balance-outer">
+      <div class="balance-inner">
+        <p class="label">Current Balance</p>
+        <!-- <p class="value" *ngIf="userTransactions.length != 0; else elseP">
+          {{ userTransactions[userTransactions.length - 1].balance }} ₹ /-
+        </p> -->
+        <!-- <ng-template #elseP> -->
+          <p class="value">{{totalBalance}} ₹ /-</p>
+        <!-- </ng-template> -->
+      </div>
+    </div>
+    <div class="transactions">
+      <p>My Transactions</p>
+      <div class="table">
+        <table>
+          <thead>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Amount</th>
+            <th>Balance</th>
+          </thead>
+          <tbody class="scrollable-table-body">
+            <tr *ngFor="let transaction of userTransactions.slice().reverse()">
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.time }}</td>
+              <td *ngIf="transaction.type === 'CREDIT'" style="color:green">
+                {{ transaction.amount }}
+              </td>
+              <td *ngIf="transaction.type === 'DEBIT'" style="color:red">
+                {{ transaction.amount }}
+              </td>
+              <td>{{ transaction.balance }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="payment">
+    <div class="actions">
+      <button
+        class="btn"
+        (click)="showWithdrawform = !showWithdrawform"
+        type="button"
+      >
+        Withdraw
+      </button>
+      <button
+        class="btn"
+        (click)="showDepositform = !showDepositform"
+        type="button"
+      >
+        Deposit
+      </button>
+      <button
+        class="btn"
+        (click)="showTransferform = !showTransferform"
+        type="button"
+      >
+        Transfer
+      </button>
+    </div>
+  </div>
+  <div class="deposit float-form" *ngIf="showDepositform">
+    <app-depositform (dformSubmitted)="dformSubmit()"></app-depositform>
+  </div>
+  <div class="withdraw float-form" *ngIf="showWithdrawform">
+    <app-withdrawform (wformSubmitted)="wformSubmit()"></app-withdrawform>
+  </div>
+  <div class="transfer float-form" *ngIf="showTransferform">
+    <app-transferform (transfered)="tformSubmit()"></app-transferform>
+  </div>
+</div>
+
+<app-footer></app-footer>

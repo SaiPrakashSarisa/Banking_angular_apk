@@ -1,0 +1,48 @@
+<div class="cards" title="click on card to edit">
+    <div class="card">
+      <div class="card-front">
+        <div class="bank">
+          <h1></h1>
+          <img [src]="getBankLogo(creditCard.bank)" width="35px;" />
+        </div>
+        <div class="chip">
+          <img [src]="chip" alt="" />
+        </div>
+        <div class="accno">
+          <div class="accnum">{{ creditCard.card1 }}</div>
+          <div class="accnum">{{ creditCard.card2 }}</div>
+          <div class="accnum">{{ creditCard.card3 }}</div>
+          <div class="accnum">{{ creditCard.card4 }}</div>
+        </div>
+        <div class="expire">
+          <div class="exp">
+            <span>EXP</span>
+            <span>DATE</span>
+          </div>
+          <div class="date">{{ creditCard.expDate }}</div>
+        </div>
+  
+        <div class="cardholder">
+          <span> {{ user?.firstName }}</span>
+        </div>
+  
+        <div class="type">
+          <div class="type-in">
+            <img [src]="getCardLogo(creditCard.cardType)" width="40px;" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="card-back">
+        <div class="strip"></div>
+        <div class="signature">
+          <div class="sigcode"></div>
+          <div class="cvv">cvv {{ creditCard.cvv }}</div>
+        </div>
+        <div class="holo">
+          <img [src]="hologram" alt="img" />
+        </div>
+      </div>
+    </div>
+  </div>
+  

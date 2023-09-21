@@ -1,0 +1,30 @@
+<div class="main-container">
+<div class="form-container">
+    <div class="row">
+      <h1>Withdraw Amount</h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+          <div class="form-group">
+            <label for="amount"></label>
+            <input
+              type="number"
+              name="amount"
+              formControlName="amount"
+              class="form-control"
+              placeholder="Enter Amount to withdraw"
+              required
+            />
+            <button class="form-control btn" type="submit">Withdraw</button>
+  
+            <p *ngIf="errMessage" class="err">Insufficient Funds</p>
+            <p *ngIf="sucessMessage" class="sucess">
+              {{ amount }} has been withdrawn
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 

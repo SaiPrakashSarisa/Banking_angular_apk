@@ -1,0 +1,68 @@
+<app-navigation></app-navigation>
+
+<div class="outer-box">
+  <div class="content">
+    <div class="personal info">
+      <div class="title">Personal Details</div>
+      <div class="contents">
+        <div class="details">
+          <span class="label">First Name</span>
+          <span class="value">{{ user.firstName }}</span>
+        </div>
+        <div class="details">
+          <span class="label">Last Name</span>
+          <span class="value">{{ user.lastName }}</span>
+        </div>
+        <div class="details">
+          <span class="label">Email Address</span>
+          <span class="value">{{ user.email }}</span>
+        </div>
+        <div class="details">
+          <span class="label">Phone Number</span>
+          <span class="value">{{ user.contact }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="account info">
+      <div class="title">Account Details</div>
+      <div class="contents">
+        <div class="details">
+          <span class="label">Acc Number</span>
+          <span class="value">{{ user.account }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="address info">
+      <fieldset class="title">Address</fieldset>
+      <div class="contents">
+        <div class="details">
+          <span class="label">Street</span>
+          <span class="value">{{ user.address.street }} </span>
+        </div>
+        <div class="details">
+          <span class="label">City</span>
+          <span class="value">{{ user.address.city }} </span>
+        </div>
+        <div class="details">
+          <span class="label">State</span>
+          <span class="value">{{ user.address.state }} </span>
+        </div>
+        <div class="details">
+          <span class="label">PinCode</span>
+          <span class="value">{{ user.address.zip }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile info">
+    <div class="title">My Profile</div>
+    <div class="user">
+      <div *ngIf="imageUrl" class="img"><img [src]="imageUrl" alt="" width="150px"></div>
+      <span class="value">{{ user.firstName }} {{ user.lastName }}</span>
+      <input type="file" value="upload profile" accept="image/*" (change)="setProfile($event)">
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

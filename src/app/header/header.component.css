@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.pgheader {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(to right, #d8bb83, #cf931b, #d8bb83); */
+  /* color: snow; */
+  background-color: #ddd0c8;
+  color: #323232;
+  font-family: 'Secular One', sans-serif;
+}

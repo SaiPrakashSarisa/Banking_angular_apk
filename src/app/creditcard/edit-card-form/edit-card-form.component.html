@@ -1,0 +1,82 @@
+<div class="form-container">
+    <div class="row">
+      <h1>Edit Card</h1>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="editFormGroup" (ngSubmit)="editCard()">
+          <div class="form-group">
+            <input
+              [(ngModel)]="cardData.cardNumber"
+              type="number"
+              name="cardNumber"
+              formControlName="cardNumber"
+              class="form-control"
+              placeholder="Enter Card Number"
+              required
+            />
+          </div>
+  
+          <div class="form-group">
+            <input
+              [(ngModel)]="cardData.cvv"
+              type="number"
+              name="cvv"
+              formControlName="cvv"
+              class="form-control"
+              placeholder="Enter Card CVV Number"
+              required
+            />
+          </div>
+  
+          <div class="form-group">
+            <input
+              [(ngModel)]="cardData.expDate"
+              type="text"
+              name="expDate"
+              formControlName="expDate"
+              class="form-control"
+              placeholder="expire date (eg: 11/30) month and year"
+              required
+            />
+          </div>
+  
+          <div class="form-group">
+            <select
+              [(ngModel)]="cardData.bank"
+              name="bank"
+              formControlName="bank"
+              class="form-control"
+              required
+            >
+              <option disabled selected>Choose bank</option>
+              <option value="SBI">SBI</option>
+              <option value="HDFC">HDFC</option>
+              <option value="ICICI">ICICI</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <select
+              [(ngModel)]="cardData.cardType"
+              name="cardType"
+              formControlName="cardType"
+              class="form-control"
+              required
+            >
+              <option disabled selected>Choose CardType</option>
+              <option value="VISA">VISA</option>
+              <option value="Master">MASTER</option>
+              <option value="Rupay">RUPAY</option>
+            </select>
+          </div>
+          <div class="form-group btn-group">
+            <button class="btn" type="submit">Edit Card</button>
+            <button class="btn" type="button" (click)="deleteCard()">Delete Card</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

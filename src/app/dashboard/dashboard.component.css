@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .outer-box {
+    background: linear-gradient(to right, #709ebd, #2c3e50);
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inner-box {
+    height: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(100px, 600px));
+    grid-template-rows: repeat(2, minmax(100px, 600px));
+  }
+  
+  .box {
+    margin: 20px;
+    background-color: #ddd0c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

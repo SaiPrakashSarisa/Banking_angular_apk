@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .pgfooter {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd0c8;
+    color: black;
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  

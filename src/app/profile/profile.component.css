@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Secular+One&family=Tajawal:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Titillium+Web:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Orbitron&family=Titillium+Web:wght@300&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.outer-box {
+  height: 85vh;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to right, #709ebd, #2c3e50);
+  overflow: auto;
+}
+
+.content {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.info {
+  margin: 20px;
+  padding: 5px;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.profile {
+  width: 20%;
+}
+
+.title {
+  font-family: 'Titillium Web', sans-serif;
+  border-radius: 4px;
+  background-color: rgb(191, 214, 235);
+  border: none;
+  border-left: 4px solid;
+  padding-left: 5px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 5px 5px;
+}
+
+.value,
+.label {
+  margin: 5px;
+}
+
+.value {
+  font-family: 'Titillium Web', sans-serif;
+  color: #ffbb00;
+}
+
+.label {
+  font-family: 'Tajawal', sans-serif;
+  color: white;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 30px;
+}
+
+.user {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  /* background-image: url('https://cdn-icons-png.flaticon.com/128/1144/1144760.png'); */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+
+}
+
+.img img{
+  border-radius: 50%;
+  width:200px;
+  height : 200px;
+  border: 1px solid black;
+}

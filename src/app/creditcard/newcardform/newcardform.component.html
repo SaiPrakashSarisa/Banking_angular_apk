@@ -1,0 +1,77 @@
+<div class="form-container">
+    <div class="row">
+      <h1>Add New Card</h1>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="newCard" (ngSubmit)="cardSubmit()">
+          <div class="form-group">
+            <input
+              type="number"
+              name="cardNumber"
+              formControlName="cardNumber"
+              class="form-control"
+              placeholder="Enter Card Number"
+              required
+            />
+            
+          </div>
+  
+          <div class="form-group">
+            <input
+              type="number"
+              name="cvv"
+              formControlName="cvv"
+              class="form-control"
+              placeholder="Enter Card CVV Number"
+              required
+            />
+          </div>
+  
+          <div class="form-group">
+            <input
+              type="text"
+              name="expDate"
+              formControlName="expDate"
+              class="form-control"
+              placeholder="expire date (eg: 11/30) month and date"
+              required
+            />
+          </div>
+  
+          <div class="form-group">
+            <select
+              name="bank"
+              formControlName="bank"
+              class="form-control"
+              required
+            >
+              <option disabled>Choose bank</option>
+              <option value="SBI">SBI</option>
+              <option value="HDFC">HDFC</option>
+              <option value="ICICI">ICICI</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <select
+              name="cardType"
+              formControlName="cardType"
+              class="form-control"
+              required
+            >
+              <option disabled>Choose CardType</option>
+              <option value="VISA">VISA</option>
+              <option value="Master">MASTER</option>
+              <option value="Rupay">RUPAY</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button class="btn" type="submit">Add Card</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

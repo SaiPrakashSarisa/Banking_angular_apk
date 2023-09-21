@@ -1,0 +1,25 @@
+
+<app-navigation> </app-navigation>
+<div class="container">
+  <div class="addcard">
+    <button type="button" class="btn" (click)="newCardForm = !newCardForm">
+      Add New Card
+    </button>
+  </div>
+
+  <div class="inner-container">
+    <div class="card" *ngFor="let card of creditCards" (click)="editCard(card)">
+      <app-card [creditCard]="card"></app-card>
+    </div>
+  </div>
+  <div class="cardform form" *ngIf="newCardForm">
+    <app-newcardform (newCardFormSubmitted)="newCardFormSubmitted()"></app-newcardform>
+  </div>
+  <div class="editcardform form" *ngIf="editCardForm">
+    <app-edit-card-form
+      [cardData]="selectedCard"
+      (editedCard)="updateCard($event)"
+    ></app-edit-card-form>
+  </div>
+</div>
+<app-footer></app-footer>
